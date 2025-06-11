@@ -55,8 +55,3 @@ Private repository – not publicly licensed.
 ---
 
 > GitHub [@brunohaf](https://github.com/brunohaf)
-
----
-
-Would you like me to generate those READMEs in full files for you to upload or help with setting up the submodule config?
-```
