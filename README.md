@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <div style="width:312px; height:312px; border-radius:50%; overflow:hidden; border:4px solid #333; margin: 0 auto; display:flex; align-items:center; justify-content:center;">
-    <img src="https://placedog.net/512" alt="Round Image" style="width:100%; height:100%; object-fit:cover;">
+      <img src="./src/resources/trapezohedronlogn.png" alt="" style="width:100%; height:100%; object-fit:cover;">
   </div>
   The Shining Trapezohedro(nlogn)
   <br>
@@ -23,10 +23,6 @@
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
-
-<div align="center">
-  <img src="https://placedog.net/800x300" alt="Image">
-</div>
 
 ## Key Features
 
