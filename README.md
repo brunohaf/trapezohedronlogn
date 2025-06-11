@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
-  <div style="width:312px; height:312px; border-radius:50%; overflow:hidden; border:4px solid #333; margin: 0 auto; display:flex; align-items:center; justify-content:center;">
-      <img src="./src/resources/trapezohedronlogn.png" alt="" style="width:100%; height:100%; object-fit:cover;">
+  <div style="width:150px; height:150px; border-radius:50%; overflow:hidden; border:4px solid #333; margin: 0 auto; display:flex; align-items:center; justify-content:center;">
+      <img src="./src/resources/trapezohedronlogn.png" alt="" style="width:40%; height:40%; object-fit:cover;">
   </div>
   The Shining Trapezohedro(nlogn)
   <br>
