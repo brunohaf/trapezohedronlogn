@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <div style="width:312px; height:312px; border-radius:50%; overflow:hidden; border:4px solid #333; margin: 0 auto; display:flex; align-items:center; justify-content:center;">
-      <img src="./src/resources/trapezohedronlogn.png" alt="" style="width:100%; height:100%; object-fit:cover;">
+      <img src="./src/resources/trapezohedronlogn.png" alt="" style="width:40%; height:40%; object-fit:cover;">
   </div>
   The Shining Trapezohedro(nlogn)
   <br>
@@ -10,7 +10,7 @@
 <h4 align="center">A repository containing personal code solutions and problem-solving notes, inspired by mythos artifacts and algorithmic complexity.</h4>
 <p align="center">
   <a href="#"><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/license-Private-red.svg" alt="License"></a>
+  <a href="#"><img src="https://img.shields.io/github/license/brunohaf/trapezohedronlogn" alt="License"></a>
   <a href="#"><img src="https://img.shields.io/badge/build-passing-brightgreen.svg" alt="Build"></a>
 </p>
 
@@ -75,7 +75,7 @@ Named after *The Shining Trapezohedron* from H. P. Lovecraft’s **The Haunter o
 
 ## License
 
-Private repository – not publicly licensed.
+[MIT](LICENSE)
 
 ---
 
