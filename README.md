@@ -75,7 +75,7 @@ Named after *The Shining Trapezohedron* from H. P. Lovecraft’s **The Haunter o
 
 ## License
 
-[MIT](LICENSE)
+[Apache 2.0](LICENSE)
 
 ---
 
