@@ -85,7 +85,6 @@ from collections import deque
 # @lc code=start
 class Solution:
     def parse(self,symbol: str) -> int:
-        print(f"summing {symbol}")
         return {
             "i":1,
             "iv":4,
