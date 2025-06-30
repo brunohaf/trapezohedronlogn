@@ -1,0 +1,51 @@
+{
+    "folders": [
+        {
+            "path": "../trapezohedronlogn"
+        }
+    ],
+    "settings": {},
+    "tasks": {
+        "tasks": [
+            {
+                "args": [
+                    "--encrypt",
+                    "${file}"
+                ],
+                "command": "${workspaceFolder}/src/scripts/post-mortem.bash",
+                "label": "Encrypt Notes in This File",
+                "options": {
+                    "env": {
+                        "GPG_KEY": "<gpg-key-signature-here>"
+                    }
+                },
+                "presentation": {
+                    "panel": "shared",
+                    "reveal": "always"
+                },
+                "problemMatcher": [],
+                "type": "shell"
+            },
+            {
+                "args": [
+                    "--decrypt",
+                    "${file}"
+                ],
+                "command": "${workspaceFolder}/src/scripts/post-mortem.bash",
+                "label": "Decrypt Notes in This File",
+                "options": {
+                    "env": {
+                        "GPG_KEY": "<gpg-key-signature-here>"
+                    }
+                },
+                "presentation": {
+                    "panel": "shared",
+                    "reveal": "always"
+                },
+                "problemMatcher": [],
+                "type": "shell"
+            }
+        ],
+        "version": "2.0.0"
+    }
+}
