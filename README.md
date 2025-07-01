@@ -3,7 +3,7 @@
   <div style="width:312px; height:312px; border-radius:50%; overflow:hidden; border:4px solid #333; margin: 0 auto; display:flex; align-items:center; justify-content:center;">
       <img src="./src/resources/trapezohedronlogn.png" alt="" style="width:40%; height:40%; object-fit:cover;">
   </div>
-  The Shining Trapezohedro(nlogn)
+  The Shining Trapezohedron(logn)
   <br>
 </h1>
 
@@ -21,11 +21,14 @@
   <a href="#credits">Credits</a> •
   <a href="#license">License</a>
 </p>
-
-<em>
-  “I have seen the dark universe yawning where the black planets roll without aim... The Shining Trapezohedron... blasphemous and unholy, was a window on all time and space.”
-  <span style="float: right;"><br>- The Haunter of the Dark by H. P. Lovecraft.</span>
-</em>
+<p>
+  <i>
+    “I have seen the dark universe yawning where the black planets roll without aim... The Shining Trapezohedron... blasphemous and unholy, was a window on all time and space.”
+  </i>
+</p>
+<p style="text-align: right; margin-top: -25px;">
+  - The Haunter of the Dark by H. P. Lovecraft.
+</p>
 
 ## Key Features
 
