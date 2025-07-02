@@ -82,7 +82,8 @@ class Solution:
 #   if max_reach >= destination -> Return True
 # Return False
 
-# @notes post-mortem=start
+'''
+@notes post-mortem=start
 -----BEGIN PGP MESSAGE-----
 
 hF4DjxTuSjEZ/v8SAQdAzWwNn4bMtKC0j1WijdVNtNUNpnT4sK+MH6tUQQ3nOSEw
@@ -107,4 +108,5 @@ xjR/TuMHKODW1zuDKpX83+R8WQQZjXLHwFfGlroz6N1F0AQ5UUA8PDMh3EuLD6WP
 I6DSfbB4MlZKnZLyGbyZ+75vRgkb+w==
 =PH3J
 -----END PGP MESSAGE-----
-# @notes post-mortem=end
+@notes post-mortem=end
+'''
