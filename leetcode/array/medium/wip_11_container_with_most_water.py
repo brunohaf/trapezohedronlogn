@@ -78,18 +78,4 @@ sol = Solution()
 assert sol.maxArea([1,8,6,2,5,4,8,3,7]) == 49
 assert sol.maxArea([1,1]) == 1
 
-# water_area = (i-base_line) * min(height[i], height[base_line])
-# max_water_area = 0
-# base_line = 0
-# Get the first non-zero line
-# From farthest_line to base_line: do
-# Get the tallest line
-#   if water_area > max_water_area:
-#       max_water_area = water_area
-# Return max_water_area
-
-# Input: height = [1,8,6,2,5,4,8,3,7]
-# Output: 49
-## base_line = 1
-## lines | water_area
-## 8,1   |   7 * 7             
+# TODO: Solve in O(n)        
