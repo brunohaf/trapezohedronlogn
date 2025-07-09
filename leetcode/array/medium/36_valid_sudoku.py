@@ -168,23 +168,22 @@ assert solution.isValidSudoku(
 )
 
 '''
-Understanding:
-    Goal: To validate if a 9x9 Sudoku is valid (True|False).
-    - Rules for rows, columns and 3x3blocks:
-        - x can be "." or [1-9]
-        - 1 <= x <= 9 (without duplicates)
-        - if x != "."; then skip
-    - Other:
-        - A valid Sudoku board is not the same as a solvable Sudoku.
-        Input: [ [x]*9 ]
-            {     3x3block    }
-            [ x00 | x01 | x02 |... x09 ]
-            [ x01 | x11 | x12 |... x19 ]
-            [ x20 | x21 | x22 |... x29 ]
-            ...
-            [ x90 | x91 | x92 |... x99 ]
-ICE was not executed :(
-Pseudocode: Bruteforce + Hash Table for checking for duplicates.
+- Understanding:
+    Goal: For each row, column and 3x3block, return False if there are duplicates. Else, return True.
+    Rules:
+        - The board may be valid but not solvable. However, the goal is to validate if it is valid.
+        - Values in the 9x9 board:
+            - x can be "." or [1-9]
+                - If x is "."; then ignore
+                - If 1 <= x <= 9; It must be unique for rows, columns and 3x3blocks
+        - Input: [ [x]*9 ] ; 
+                {     3x3block    }
+                [ x00 | x01 | x02 |... x09 ]
+                [ x01 | x11 | x12 |... x19 ]
+                [ x20 | x21 | x22 |... x29 ]
+                ...
+                [ x90 | x91 | x92 |... x99 ]
+- Pseudocode: Bruteforce + Hashing for verification of duplicates. O(n^2) time and O(1) space.
     Declare the Hashtable: table = {}
     Declare block_number = 0
     For r,row in enumerate(board):
@@ -194,7 +193,8 @@ Pseudocode: Bruteforce + Hash Table for checking for duplicates.
             If theres any entry in table for r_0:row[c]|c_0:row[c]|b_0:row[c], then Return False;
             Add r_0:row[c]|c_0:row[c]|b_0:row[c] to table;
     Return True
-Hand-Testing:
+- Hand-Testing:
+    - r (row index), c (column index): [row | table.get([r_{r}:{row[c]};;c_{c}:{row[c]};;b_{block_number}:{row[c]}]) -> False,False,False]
     Input = [
             ["5","3",".",".","7",".",".",".","."],
             ["6",".",".","1","9","5",".",".","."],
@@ -207,54 +207,53 @@ Hand-Testing:
             [".",".",".",".","8",".",".","7","9"]
         ]
 
-    - 0,0: table.get(r_0:5|c_0:5|b_0:5) -> False,False,False,False: OK
-    - 0,1: table.get(r_0:3|c_1:3|b_0:3) -> False,False,False: OK
-    - 0,2: continue: OK
-    - 0,3: continue: OK
-    - 0,4: table.get(r_0:7|c_4:7|b_0:7) -> False,False,False: OK
-    - 0,5: continue: OK
-    - 0,6: continue: OK
-    - 0,7: continue: OK
-    - 0,8: continue: OK
+    - 0,0: table.get(r_0:5;;c_0:5;;b_0:5) -> False,False,False
+    - 0,1: table.get(r_0:3;;c_1:3;;b_0:3) -> False,False,False
+    - 0,2: skip
+    - 0,3: skip
+    - 0,4: table.get(r_0:7;;c_4:7;;b_0:7) -> False,False,False
+    - 0,5: skip
+    - 0,6: skip
+    - 0,7: skip
+    - 0,8: skip
 
-    - 1,0: table.get(r_1:5|c_0:5|b_0:5) -> False,False,False,False: OK
+    - 1,0: table.get(r_1:5;;c_0:5;;b_0:5) -> False,False,False
     - 1,1: continue
     - 1,2: continue
-    - 1,3: table.get(r_1:1|c_3:1|b_1:1) -> False,False,False: OK
-    - 1,4: table.get(r_1:9|c_4:9|b_1:9) -> False,False,False: OK
-    - 1,5: table.get(r_1:5|c_5:5|b_1:5) -> False,False,False: OK
-    - 1,6: continue: OK
-    - 1,7: continue: OK
-    - 1,8: continue: OK
+    - 1,3: table.get(r_1:1;;c_3:1;;b_1:1) -> False,False,False
+    - 1,4: table.get(r_1:9;;c_4:9;;b_1:9) -> False,False,False
+    - 1,5: table.get(r_1:5;;c_5:5;;b_1:5) -> False,False,False
+    - 1,6: skip
+    - 1,7: skip
+    - 1,8: skip
 
-    - 2,0: continue: OK
-    - 2,1: table.get(r_2:9|c_1:9|b_0:9) -> False,False,False,False: OK
-    - 2,2: table.get(r_2:8|c_2:8|b_0:8) -> False,False,False,False: OK
-    - 2,3: continue: OK
-    - 2,4: continue: OK
-    - 2,5: continue: OK
-    - 2,6: continue: OK
-    - 2,7: table.get(r_2:6|c_7:6|b_0:6) -> False,False,False,False: OK
-    - 2,8: continue: OK
+    - 2,0: skip
+    - 2,1: table.get(r_2:9;;c_1:9;;b_0:9) -> False,False,False
+    - 2,2: table.get(r_2:8;;c_2:8;;b_0:8) -> False,False,False
+    - 2,3: skip
+    - 2,4: skip
+    - 2,5: skip
+    - 2,6: skip
+    - 2,7: table.get(r_2:6;;c_7:6;;b_0:6) -> False,False,False,False
+    - 2,8: skip
     
     ...
 
 @notes post-mortem=start
 -----BEGIN PGP MESSAGE-----
 
-hF4DjxTuSjEZ/v8SAQdApOJMnMZbNh3PyAHWAwKOzGNmpILuKJYOfmis5pe29W4w
-0SYdfQasuZnDwjZ6sVCU88yYYs+xQ7ncMc/eRz2sQS4m7UISUKITErvTWrv219nA
-0sERAcGLnOjIIqJcbBZXk4nGbxtZV2k80b+zLtXVQBkIQKzpXK09SGGkUVIvsHM5
-MlL6+gEZkJW4fKtjaagBnjG8eGEnpGGW9WgallVttHxelJUJ3LhVfnEp5Xv383f/
-zySET3v3BDPdO4w/m2Odck4UmwO8zCrCnCXj6zGw539YeCkdULfaAHQ9oZVVeSJd
-b6kA3+bFmyfVgPI0CBM3Kvwal9IMVCKlqscZxoyW9ghBjHrXVURQfj/tlXy2za2F
-jCG8y3fbsRhYFZveKfiIJs1M2npuVv8alfJYsKinKH+QSZniTI8nwmexVPuaqUdb
-jpROLDOszxMvo6SqHGi5MM6mtfke23PlfIzfhIFBbem39/TL+PDlNKRQROZtQlm/
-cB6gupmeU6Sc3nqe1tGveuyMIEqvJ9Nh0g1mGqXNyWrH58RcRm9Blv7BjMpzpFBr
-DmN4s2Io/jP5Kn8/IGOBNDD2G5l1tlzo2UNoyzJsbZmE80ZS/QWl9MGRGwO1dOUD
-ciBE6C++1SWp+iAlWSWim0sE2Y0ombFqPCr+X0A63RVmzVymLemufOphr5DGsit0
-2PH8/8nWy3oHlDvhhtSohaDEznQr9ToOl2fI5Onz+cydZbke
-=J9Ye
+hF4DjxTuSjEZ/v8SAQdAsxDn4a1uqj7SuwSYCU7GpEDd+huDVYCesSUVT+usG1ww
+1Fdk31c6RJ7W9b7ltEGuAaS8vbUj1WYWaTFkppLQeaby6cBP1D30vMQwJ39wqeuT
+0sDpAQx62LAuYvSqbgoC15n6+2KY706MDdW3uJIJtdle4it5bm7tvFsnRWBYv/LJ
+GNmhBFE2qvDA86eS3O8EkQAIhWCE1L9Vnq0L71OLk4YPUg5OQCqKx/2tsG0JTZ7D
+oQkT6wu/A29taFxPX3QNh8VXVVCz7tWE5RjW2niu5i1mLhN6iNTEw6loLsMAbI5r
+V/grDvPbBlMVU4AqWpKXnbi9qb5Mi6+cRJ4Ell0yn5bVPnc+YGzueCQiDtOiCKmz
+9dHESovXrE4mfpyYHcpEOTOBbqyL5QEFqikhYFw735t63F8372i+J0qxzhcDte3V
+WeUrT+bTF5xvcpTG8ou+rECGQg0ZTYjoEPoBmNAsJaplT8O6V36zEcf0zAIjokbj
+ItgTdybudWehdjUmxo28NnzAWnsdDFF9gNmBGKZD+SCRYO0JKGxoU4eW6tw2uKXq
+AvMJ8jR+X2WHAZCUVuj3qF4JPKhniJ+CEg7UTCZ+4tzrD3sEgW0FSZwXLhdyNsyU
+cq/8YSulZqtmvzGdJyzr9b2TwDc6m8428w1C/BQxw2m2iBuFLoAk48PLtOM=
+=IsqI
 -----END PGP MESSAGE-----
 @notes post-mortem=end
 '''
