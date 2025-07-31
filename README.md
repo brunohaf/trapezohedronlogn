@@ -33,13 +33,13 @@
 
 ## Key Features
 
-* 💻 Personal solutions to Data Structures & Algorithms (DSA) problems
-* 🧠 Detailed notes capturing my thought process
-* 🕵️‍♂️ LeetCode problems semantically categorized by data structures
+- Personal solutions to Data Structures & Algorithms (DSA) problems
+- Notes & Drawings capturing my thought process
+- LeetCode problems semantically categorized by data structures
 
 ## How To Use
 
-This repository is primarily intended for personal use but can be helpful to others as well. You can use it standalone or include it as a submodule in  [`yeetcodex`](https://github.com/brunohaf/yeetcodex).
+This repository is primarily intended for personal use but can be helpful to others as well. You can use it standalone or include it as a submodule in [`yeetcodex`](https://github.com/brunohaf/yeetcodex).
 
 ```bash
 git clone git@github.com:brunohaf/trapezohedronlogn.git
@@ -55,25 +55,25 @@ This setup works seamlessly with the excellent [vscode-leetcode](https://github.
 
 ```json
 {
-    "leetcode.workspaceFolder": "${env:pwd}/solutions/leetcode",
-    "leetcode.filePath": {
-        "default": {
-            "folder": "${tag}/${difficulty}",
-            "filename": "${id}_${snake_case_name}.${ext}"
-        }
-    },
-    "leetcode.defaultLanguage": "python3",
-    "leetcode.colorizeProblems": true,
-    "leetcode.hint.commentDescription": true,
-    "leetcode.showDescription": "Both",
-    "leetcode.allowReportData": false
+  "leetcode.workspaceFolder": "${env:pwd}/solutions/leetcode",
+  "leetcode.filePath": {
+    "default": {
+      "folder": "unsorted/${difficulty}",
+      "filename": "${id}_${snake_case_name}.${ext}"
+    }
+  },
+  "leetcode.defaultLanguage": "python3",
+  "leetcode.colorizeProblems": true,
+  "leetcode.hint.commentDescription": true,
+  "leetcode.showDescription": "Both",
+  "leetcode.allowReportData": false
 }
 ```
 
 ## Credits
 
 Inspired by **Lovecraftian mythos** and the beauty of computational thinking.
-Named after *The Shining Trapezohedron* from H. P. Lovecraft’s **The Haunter of the Dark**, where unspeakable knowledge comes at a terrible cost.
+Named after _The Shining Trapezohedron_ from H. P. Lovecraft’s **The Haunter of the Dark**, where unspeakable knowledge comes at a terrible cost.
 
 ## License
 
@@ -82,4 +82,3 @@ Named after *The Shining Trapezohedron* from H. P. Lovecraft’s **The Haunter o
 ---
 
 > GitHub [@brunohaf](https://github.com/brunohaf)
-
